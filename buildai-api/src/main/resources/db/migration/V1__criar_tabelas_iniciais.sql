@@ -1,7 +1,7 @@
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 create table categorias (
-    id BIGSERIAL PRIMARY KEY,
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     codigo VARCHAR(10) NOT NULL,
     nome VARCHAR(100) NOT NULL,
     descricao TEXT
