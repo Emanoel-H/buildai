@@ -69,3 +69,8 @@ CREATE TRIGGER trg_generate_usuarios_code
 BEFORE INSERT ON usuarios
 FOR EACH ROW
 EXECUTE FUNCTION generate_code();
+
+CREATE TRIGGER trg_generate_servicos_oferecidos_code
+BEFORE INSERT ON servicos_oferecidos
+FOR EACH ROW
+EXECUTE FUNCTION generate_code();
