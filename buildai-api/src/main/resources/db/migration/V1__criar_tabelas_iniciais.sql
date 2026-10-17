@@ -52,3 +52,7 @@ create table servicos_oferecidos(
     CONSTRAINT uq_profissional_categoria
     UNIQUE (profissional_id, categoria_id)
 );
+
+CREATE INDEX idx_usuarios_localizacao
+ON usuarios
+USING GIST(localizacao);
