@@ -8,7 +8,7 @@ create table categorias (
 );
 
 create table usuarios (
-    id BIGSERIAL PRIMARY KEY,
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     codigo VARCHAR(10) NOT NULL,
     nome VARCHAR(100) NOT NULL,
     IDENTIFICACAO VARCHAR(20) NOT NULL,
