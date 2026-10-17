@@ -21,7 +21,7 @@ create table usuarios (
 );
 
 create table profissionais (
-    id BIGSERIAL PRIMARY KEY,
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     usuario_id BIGINT NOT NULL,
     raio_atendimento_km DECIMAL(5,2) NOT NULL,
 
