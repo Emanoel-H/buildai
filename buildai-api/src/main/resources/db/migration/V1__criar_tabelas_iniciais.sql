@@ -19,3 +19,16 @@ create table usuarios (
     data_cadastro TIMESTAMP DEFAULT NOW(),
     data_alteracao timestamp(6) NULL
 );
+
+create table profissionais (
+    id BIGSERIAL PRIMARY KEY,
+    usuario_id BIGINT NOT NULL,
+    raio_atendimento_km DECIMAL(5,2) NOT NULL,
+
+    CONSTRAINT fk_usuarios_profissionais FOREIGN KEY (usuario_id)
+	REFERENCES usuarios(id)
+	ON DELETE CASCADE,
+
+    CONSTRAINT uq_usuario
+    UNIQUE (usuario_id)
+);
