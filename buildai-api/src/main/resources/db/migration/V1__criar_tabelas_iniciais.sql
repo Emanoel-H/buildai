@@ -56,3 +56,11 @@ create table servicos_oferecidos(
 CREATE INDEX idx_usuarios_localizacao
 ON usuarios
 USING GIST(localizacao);
+
+CREATE OR REPLACE FUNCTION generate_code()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.code := to_char(CURRENT_DATE, 'YYMMDD') || lpad(floor(random() * 10000)::text, 4, '0');
+RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
