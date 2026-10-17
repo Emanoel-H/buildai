@@ -34,7 +34,7 @@ create table profissionais (
 );
 
 create table servicos_oferecidos(
-    id BIGSERIAL PRIMARY KEY,
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     codigo VARCHAR(10) NOT NULL,
     profissional_id BIGINT NOT NULL,
     categoria_id BIGINT NOT NULL,
