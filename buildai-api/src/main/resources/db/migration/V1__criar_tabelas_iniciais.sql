@@ -35,6 +35,7 @@ create table servicos_oferecidos(
     profissional_id BIGINT NOT NULL,
     categoria_id BIGINT NOT NULL,
     preco DECIMAL(10,2) NOT NULL,
+    preco_negociavel BOOLEAN NOT NULL DEFAULT FALSE,
     ativo BOOLEAN NOT NULL DEFAULT TRUE,
     data_cadastro TIMESTAMPTZ NOT NULL DEFAULT now(),
 
