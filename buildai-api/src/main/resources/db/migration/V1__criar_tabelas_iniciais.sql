@@ -62,8 +62,8 @@ create table pedidos(
     localizacao GEOGRAPHY(POINT, 4326),
     preco_pedido DECIMAL(10,2) NOT NULL,
     status status_pedido DEFAULT 'pendente' NOT NULL,
-    data_agendamento TIMESTAMP NOT NULL,
-    data_cadastro TIMESTAMP DEFAULT NOW(),
+    data_agendamento TIMESTAMPTZ NOT NULL DEFAULT now(),
+    data_cadastro TIMESTAMPTZ NOT NULL DEFAULT now(),
 
     CONSTRAINT fk_pedidos_usuarios FOREIGN KEY (cliente_id)
     REFERENCES usuarios(id)
