@@ -51,7 +51,7 @@ create table pedidos(
     data_agendamento TIMESTAMP NOT NULL,
     data_cadastro TIMESTAMP DEFAULT NOW(),
 
-    CONSTRAINT fk_pedidos_usuarios FOREIGN KEY (usuarios_id)
+    CONSTRAINT fk_pedidos_usuarios FOREIGN KEY (cliente_id)
     REFERENCES usuarios(id)
     ON DELETE RESTRICT,
 
