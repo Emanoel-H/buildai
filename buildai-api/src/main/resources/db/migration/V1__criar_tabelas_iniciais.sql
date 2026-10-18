@@ -65,6 +65,7 @@ create table pedidos(
     status status_pedido DEFAULT 'pendente' NOT NULL,
     data_agendamento TIMESTAMPTZ NOT NULL DEFAULT now(),
     data_cadastro TIMESTAMPTZ NOT NULL DEFAULT now(),
+    data_alteracao TIMESTAMPTZ NOT NULL DEFAULT now(),
 
     CONSTRAINT fk_pedidos_usuarios FOREIGN KEY (cliente_id)
     REFERENCES usuarios(id)
