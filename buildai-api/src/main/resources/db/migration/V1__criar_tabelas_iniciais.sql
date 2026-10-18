@@ -38,7 +38,7 @@ create table servicos_oferecidos(
     categoria_id BIGINT NOT NULL,
     preco DECIMAL(10,2) NOT NULL,
     ativo BOOLEAN NOT NULL DEFAULT TRUE,
-    data_cadastro TIMESTAMP DEFAULT NOW(),
+    data_cadastro TIMESTAMPTZ NOT NULL DEFAULT now(),
 
     CONSTRAINT uq_profissional_categoria
     UNIQUE (profissional_id, categoria_id)
