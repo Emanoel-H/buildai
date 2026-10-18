@@ -63,3 +63,6 @@ create table pedidos(
 CREATE INDEX idx_usuarios_localizacao
 ON usuarios
 USING GIST(localizacao);
+
+CREATE INDEX idx_servicos_oferecidos_categorias
+ON servicos_oferecidos (categoria_id);
