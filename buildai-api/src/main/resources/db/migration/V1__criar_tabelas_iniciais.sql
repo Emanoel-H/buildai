@@ -1,5 +1,13 @@
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
+CREATE TYPE status_pedido as ENUM(
+'pendente',
+'aceito',
+'em_andamento',
+'concluido',
+'cancelado'
+);
+
 create table categorias (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     nome VARCHAR(100) NOT NULL,
