@@ -38,6 +38,10 @@ create table servicos_oferecidos(
     ativo BOOLEAN NOT NULL DEFAULT TRUE,
     data_cadastro TIMESTAMPTZ NOT NULL DEFAULT now(),
 
+    CONSTRAINT fk_servicos_oferecidos_usuarios FOREIGN KEY (profissional_id)
+    REFERENCES usuarios(id)
+    ON DELETE NO ACTION,
+    
     CONSTRAINT uq_profissional_categoria
     UNIQUE (profissional_id, categoria_id)
 );
