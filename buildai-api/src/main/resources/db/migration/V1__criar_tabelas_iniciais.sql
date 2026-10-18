@@ -42,6 +42,7 @@ create table servicos_oferecidos(
     preco_negociavel BOOLEAN NOT NULL DEFAULT FALSE,
     ativo BOOLEAN NOT NULL DEFAULT TRUE,
     data_cadastro TIMESTAMPTZ NOT NULL DEFAULT now(),
+    data_alteracao TIMESTAMPTZ NOT NULL DEFAULT now(),
 
     CONSTRAINT fk_servicos_oferecidos_usuarios FOREIGN KEY (profissional_id)
     REFERENCES usuarios(id)
