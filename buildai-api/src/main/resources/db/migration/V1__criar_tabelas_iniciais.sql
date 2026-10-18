@@ -27,10 +27,7 @@ create table profissionais (
 
     CONSTRAINT fk_usuarios_profissionais FOREIGN KEY (usuario_id)
 	REFERENCES usuarios(id)
-	ON DELETE CASCADE,
-
-    CONSTRAINT uq_usuario
-    UNIQUE (usuario_id)
+	ON DELETE CASCADE
 );
 
 create table servicos_oferecidos(
