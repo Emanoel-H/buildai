@@ -15,8 +15,8 @@ create table usuarios (
     senha TEXT NOT NULL,
     localizacao GEOGRAPHY(POINT, 4326),
     ativo BOOLEAN NOT NULL DEFAULT TRUE,
-    data_cadastro TIMESTAMP DEFAULT NOW(),
-    data_alteracao timestamp(6) NULL
+    data_cadastro TIMESTAMPTZ NOT NULL DEFAULT now(),
+    data_alteracao TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
 create table profissionais (
