@@ -15,7 +15,6 @@ create table usuarios (
     email VARCHAR(200) UNIQUE NOT NULL,
     telefone VARCHAR(11) NOT NULL,
     senha_hash TEXT NOT NULL,
-    localizacao GEOGRAPHY(POINT, 4326),
     ativo BOOLEAN NOT NULL DEFAULT TRUE,
     data_cadastro TIMESTAMPTZ NOT NULL DEFAULT now(),
     data_alteracao TIMESTAMPTZ NOT NULL DEFAULT now()
