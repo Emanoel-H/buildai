@@ -61,8 +61,3 @@ BEGIN
 RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
-
-CREATE TRIGGER trg_generate_usuarios_code
-BEFORE INSERT ON usuarios
-FOR EACH ROW
-EXECUTE FUNCTION generate_code();
