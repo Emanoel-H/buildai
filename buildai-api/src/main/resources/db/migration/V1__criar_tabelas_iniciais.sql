@@ -60,8 +60,8 @@ create table pedidos(
     ON DELETE RESTRICT
 );
 
-CREATE INDEX idx_usuarios_localizacao
-ON usuarios
+CREATE INDEX idx_profissionais_localizacao
+ON profissionais
 USING GIST(localizacao);
 
 CREATE INDEX idx_servicos_oferecidos_categorias
