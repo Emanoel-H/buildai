@@ -39,7 +39,7 @@ create table servicos_oferecidos(
     data_cadastro TIMESTAMPTZ NOT NULL DEFAULT now(),
 
     CONSTRAINT uq_profissional_categoria
-    UNIQUE (usuarios_id, categoria_id)
+    UNIQUE (profissional_id, categoria_id)
 );
 
 create table pedidos(
