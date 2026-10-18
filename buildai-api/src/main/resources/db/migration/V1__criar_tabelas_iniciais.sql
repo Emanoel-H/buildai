@@ -61,7 +61,7 @@ create table pedidos(
     servico_id UUID NOT NULL,
     localizacao GEOGRAPHY(POINT, 4326),
     preco_pedido DECIMAL(10,2) NOT NULL,
-    status_pedido DEFAULT 'pendente' NOT NULL,
+    status status_pedido DEFAULT 'pendente' NOT NULL,
     data_agendamento TIMESTAMP NOT NULL,
     data_cadastro TIMESTAMP DEFAULT NOW(),
 
