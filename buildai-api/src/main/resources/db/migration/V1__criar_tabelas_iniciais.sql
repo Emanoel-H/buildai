@@ -56,6 +56,7 @@ create table pedidos(
     cliente_id BIGINT NOT NULL,
     servico_id BIGINT NOT NULL,
     localizacao GEOGRAPHY(POINT, 4326),
+    preco_pedido DECIMAL(10,2) NOT NULL,
     status_pedido DEFAULT 'pendente' NOT NULL,
     data_agendamento TIMESTAMP NOT NULL,
     data_cadastro TIMESTAMP DEFAULT NOW(),
