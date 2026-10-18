@@ -46,6 +46,24 @@ create table servicos_oferecidos(
     UNIQUE (profissional_id, categoria_id)
 );
 
+create table pedidos(
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    cliente_id BIGINT NOT NULL,
+    servico_id BIGINT NOT NULL,
+    localizacao GEOGRAPHY(POINT, 4326),
+    status status_pedido DEFAULT 'pendente' NOT NULL,
+    data_agendamento TIMESTAMP NOT NULL,
+    data_cadastro TIMESTAMP DEFAULT NOW(),
+
+    CONSTRAINT fk_pedidos_usuarios FOREIGN KEY (usuarios_id)
+    REFERENCES usuarios(id)
+    ON DELETE RESTRICT,
+
+    CONSTRAINT fk_pedidos_servicos FOREIGN KEY (servico_id)
+    REFERENCES servicos_oferecidos(id)
+    ON DELETE RESTRICT
+);
+
 CREATE INDEX idx_usuarios_localizacao
 ON usuarios
 USING GIST(localizacao);
