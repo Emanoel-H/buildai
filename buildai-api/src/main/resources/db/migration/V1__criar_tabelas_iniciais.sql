@@ -32,8 +32,8 @@ create table profissionais (
 
 create table servicos_oferecidos(
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    profissional_id BIGINT NOT NULL,
-    categoria_id BIGINT NOT NULL,
+    profissional_id UUID NOT NULL,
+    categoria_id UUID NOT NULL,
     preco DECIMAL(10,2) NOT NULL,
     preco_negociavel BOOLEAN NOT NULL DEFAULT FALSE,
     ativo BOOLEAN NOT NULL DEFAULT TRUE,
