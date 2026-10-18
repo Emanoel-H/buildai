@@ -11,7 +11,7 @@ create table categorias (
 create table usuarios (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     nome VARCHAR(100) NOT NULL,
-    IDENTIFICACAO VARCHAR(20) NOT NULL,
+    identificacao VARCHAR(20) NOT NULL,
     email VARCHAR(200) UNIQUE NOT NULL,
     telefone VARCHAR(11) NOT NULL,
     senha_hash TEXT NOT NULL,
