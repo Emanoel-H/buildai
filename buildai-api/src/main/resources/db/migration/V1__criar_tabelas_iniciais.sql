@@ -41,7 +41,11 @@ create table servicos_oferecidos(
     CONSTRAINT fk_servicos_oferecidos_usuarios FOREIGN KEY (profissional_id)
     REFERENCES usuarios(id)
     ON DELETE NO ACTION,
-    
+
+    CONSTRAINT fk_servicos_oferecidos_categorias FOREIGN KEY (categoria_id)
+    REFERENCES categorias(id)
+    ON DELETE NO ACTION,
+
     CONSTRAINT uq_profissional_categoria
     UNIQUE (profissional_id, categoria_id)
 );
