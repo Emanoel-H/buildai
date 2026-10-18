@@ -53,8 +53,8 @@ create table servicos_oferecidos(
 
 create table pedidos(
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    cliente_id BIGINT NOT NULL,
-    servico_id BIGINT NOT NULL,
+    cliente_id UUID NOT NULL,
+    servico_id UUID NOT NULL,
     localizacao GEOGRAPHY(POINT, 4326),
     preco_pedido DECIMAL(10,2) NOT NULL,
     status_pedido DEFAULT 'pendente' NOT NULL,
