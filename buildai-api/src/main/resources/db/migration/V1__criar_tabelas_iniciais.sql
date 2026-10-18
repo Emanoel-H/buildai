@@ -36,6 +36,7 @@ create table servicos_oferecidos(
     profissional_id BIGINT NOT NULL,
     categoria_id BIGINT NOT NULL,
     preco DECIMAL(10,2) NOT NULL,
+    ativo BOOLEAN NOT NULL DEFAULT TRUE,
     data_cadastro TIMESTAMP DEFAULT NOW(),
 
     CONSTRAINT fk_servicos_profissionais FOREIGN KEY (profissional_id)
