@@ -14,6 +14,7 @@ create table usuarios (
     telefone VARCHAR(11) NOT NULL,
     senha TEXT NOT NULL,
     localizacao GEOGRAPHY(POINT, 4326),
+    ativo BOOLEAN NOT NULL DEFAULT TRUE,
     data_cadastro TIMESTAMP DEFAULT NOW(),
     data_alteracao timestamp(6) NULL
 );
