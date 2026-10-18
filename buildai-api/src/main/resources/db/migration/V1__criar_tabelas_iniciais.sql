@@ -39,14 +39,6 @@ create table servicos_oferecidos(
     ativo BOOLEAN NOT NULL DEFAULT TRUE,
     data_cadastro TIMESTAMP DEFAULT NOW(),
 
-    CONSTRAINT fk_servicos_profissionais FOREIGN KEY (profissional_id)
-    REFERENCES profissionais(id)
-    ON DELETE CASCADE,
-
-    CONSTRAINT fk_servicos_categorias FOREIGN KEY (categoria_id)
-    REFERENCES categorias(id)
-    ON DELETE CASCADE,
-
     CONSTRAINT uq_profissional_categoria
     UNIQUE (profissional_id, categoria_id)
 );
