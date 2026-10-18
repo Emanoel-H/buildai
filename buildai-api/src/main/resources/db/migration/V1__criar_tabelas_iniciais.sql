@@ -21,7 +21,6 @@ create table usuarios (
 );
 
 create table profissionais (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     usuario_id UUID PRIMARY KEY REFERENCES usuarios(id),
     localizacao GEOGRAPHY(POINT, 4326),
     raio_atendimento_km DECIMAL(5,2) NOT NULL,
