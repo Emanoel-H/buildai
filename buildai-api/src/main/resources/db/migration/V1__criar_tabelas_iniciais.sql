@@ -33,7 +33,6 @@ create table profissionais (
 
 create table servicos_oferecidos(
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    codigo VARCHAR(10) NOT NULL,
     profissional_id BIGINT NOT NULL,
     categoria_id BIGINT NOT NULL,
     preco DECIMAL(10,2) NOT NULL,
